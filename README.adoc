@@ -1,0 +1,64 @@
+= 0930hw-LOTTERY
+
+.0930 hw
+* Postman/cURL 用途簡易說明
+* Lottery
+
+== 目錄
+
+* <<Postman/cURL 用途簡易說明>>
+** <<Postman>>
+** <<cURL>>
+* <<環境>>
+* <<邏輯說明>>
+* <<如何使用>>
+
+
+=== Postman/cURL 用途簡易說明
+
+==== Postman
+POSTMAN 是一款開發 Web API 時可使用的工具，支持 RESTful 的請求格式，方便用戶進行測試、撰寫 API 格式以及定義測試數據，便於與團隊分享，提高開發效率。
+
+==== cURL
+cURL（Client for URLs）是一個命令行工具和函式庫，用於與各種網絡協議（如 HTTP、HTTPS、FTP、FTPS、SFTP 等）進行數據傳輸、處理 cookie 和會話，等等。
+
+==== 適用場景
+* Postman：
+  - 更適合於 API 開發、測試和調試，特別是對於需要圖形界面的使用者。
+  - 適合於團隊合作，因為它提供了分享請求和測試的功能。
+
+* cURL：
+  - 更適合於自動化腳本或在 CI/CD 流程中使用。
+  - 適合於需要快速進行網絡請求的情況，並且可以用於各種命令行操作。
+
+=== 環境
+java::
+----
+  java version "21.0.4" 2024-07-16 LTS
+  Java(TM) SE Runtime Environment (build 21.0.4+8-LTS-274)
+  Java HotSpot(TM) 64-Bit Server VM (build 21.0.4+8-LTS-274, mixed mode, sharing)
+----
+tomcat::
+----
+  Server version: Apache Tomcat/10.1.30
+  Server built:   Sep 13 2024 20:26:16 UTC
+  Server number:  10.1.30.0
+----
+
+=== 佈署.WAR 到TOMCAT
+. 使用Maven build後，後產生`hw3.war`
+. 將`hw3.war`，複製到`apache-tomcat-10.1.30\webapps`
+. 運行tomcat
+
+=== 邏輯說明
+
+. 使用filter 攔截非登入、登出、註冊功能，以及首頁。
+. 使用者登入後，配發token ，並在session 中也保存一份。
+. 登入成功後，token 未過期之前或是進行登出之前，可以訪問lottery。
+
+=== 如何使用
+
+- 首頁網址如下:
+----
+  http://localhost:8080/lottery/
+----

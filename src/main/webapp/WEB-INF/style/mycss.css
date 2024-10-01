@@ -1,0 +1,20 @@
+@charset "UTF-8";
+body {
+	text-align: center;
+	margin: auto;
+		
+}
+h1,h2,h3{
+	color:#369;
+	
+}
+.myTable{
+	text-align: left;
+	margin: auto;
+	border:  1px;
+	border: 1px solid black;
+}
+th, td {
+	
+   border: none; /* 移除內部的邊框 */
+}
