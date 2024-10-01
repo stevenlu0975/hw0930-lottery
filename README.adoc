@@ -60,5 +60,5 @@ tomcat::
 
 - 首頁網址如下:
 ----
-  http://localhost:8080/lottery/
+  http://localhost:8080/lottery/login.jsp
 ----
